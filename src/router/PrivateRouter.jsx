@@ -4,7 +4,6 @@ import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 const PrivateRouter = ({ children }) => {
     const location = useLocation()
-    console.log(location)
     const { user, loading } = useContext(AuthContext)
     if (loading) {
         return <span className="loading loading-bars loading-lg"></span>

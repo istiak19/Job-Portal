@@ -1,6 +1,6 @@
 import { CiCalendarDate } from "react-icons/ci";
 import { FaBusinessTime } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const JobDetails = () => {
     const jobLoaded = useLoaderData()
@@ -26,7 +26,7 @@ const JobDetails = () => {
                     <p className="flex items-center gap-1"><CiCalendarDate /> {applicationDeadline}</p>
                 </div>
                 <div className="card-actions">
-                   <button className="btn w-full btn-primary">Apply Now</button>
+                   <Link to={`/apply/${_id}`} className="btn w-full btn-primary">Apply Now</Link>
                 </div>
             </div>
         </div>
