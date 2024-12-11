@@ -3,9 +3,11 @@ import registerAnimation from '../../assets/Register.json'
 import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthContext/AuthContext";
 import SocialLogIn from "../Shared/SocialLogIn";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const { signUpUser } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const [error, setError] = useState(null)
     const handleRegister = e => {
@@ -23,6 +25,7 @@ const Register = () => {
             .then((result) => {
                 console.log(result.user)
                 e.target.reset()
+                navigate('/')
             })
             .catch((error) => {
                 console.log(error.message)

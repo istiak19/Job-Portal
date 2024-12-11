@@ -3,9 +3,13 @@ import { useContext, useState } from "react";
 import signInAnimation from '../../assets/Login.json'
 import AuthContext from "../../context/AuthContext/AuthContext";
 import SocialLogIn from "../Shared/SocialLogIn";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
     const { signInUser } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location)
     const [error, setError] = useState(null)
     const handleSignIn = e => {
         e.preventDefault()
@@ -22,6 +26,7 @@ const SignIn = () => {
             .then((result) => {
                 console.log(result.user)
                 e.target.reset()
+                navigate(location.state || '/')
             })
             .catch((error) => {
                 console.log(error.message)
@@ -54,6 +59,7 @@ const SignIn = () => {
                             <button className="btn btn-primary">Sign In</button>
                         </div>
                     </form>
+                    <Link to='/register'>Register</Link>
                     <p className="text-red-500">{error}</p>
                     <SocialLogIn></SocialLogIn>
                 </div>

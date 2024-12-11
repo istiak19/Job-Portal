@@ -1,7 +1,8 @@
 import { CiLocationOn } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const HotJobCard = ({ job }) => {
-    const { company_logo, status, responsibilities, requirements, company, description, salaryRange, applicationDeadline, category, jobType, location, title } = job
+    const { _id, company_logo, status, responsibilities, requirements, company, description, salaryRange, applicationDeadline, category, jobType, location, title } = job
 
     return (
         <div className="card card-compact bg-base-100 shadow-xl border border-blue-300">
@@ -28,7 +29,7 @@ const HotJobCard = ({ job }) => {
                 </div>
                 <div className="card-actions justify-end items-center">
                     <p>Salary: $ {salaryRange.min} - {salaryRange.max} {salaryRange.currency}</p>
-                    <button className="btn bg-blue-600 text-white">Apply Now</button>
+                    <Link to={`/jobs/${_id}`} className="btn bg-blue-600 text-white">Apply Now</Link>
                 </div>
             </div>
         </div>
