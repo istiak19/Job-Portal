@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "jobTitle": "Content Writer",
+        "jobsAvailable": 4,
+        "img": "image1.jpg"
+    },
+    {
+        "id": 2,
+        "jobTitle": "Software Engineer",
+        "jobsAvailable": 10,
+        "img": "image2.jpg"
+    },
+    {
+        "id": 3,
+        "jobTitle": "UI/UX Designer",
+        "jobsAvailable": 6,
+        "img": "image3.jpg"
+    },
+    {
+        "id": 4,
+        "jobTitle": "Data Scientist",
+        "jobsAvailable": 3,
+        "img": "image4.jpg"
+    },
+    {
+        "id": 5,
+        "jobTitle": "Product Manager",
+        "jobsAvailable": 8,
+        "img": "image5.jpg"
+    },
+    {
+        "id": 6,
+        "jobTitle": "Marketing Specialist",
+        "jobsAvailable": 5,
+        "img": "image6.jpg"
+    },
+    {
+        "id": 7,
+        "jobTitle": "Sales Executive",
+        "jobsAvailable": 12,
+        "img": "image7.jpg"
+    },
+    {
+        "id": 8,
+        "jobTitle": "HR Manager",
+        "jobsAvailable": 2,
+        "img": "image8.jpg"
+    },
+    {
+        "id": 9,
+        "jobTitle": "Graphic Designer",
+        "jobsAvailable": 7,
+        "img": "image9.jpg"
+    },
+    {
+        "id": 10,
+        "jobTitle": "Web Developer",
+        "jobsAvailable": 15,
+        "img": "image10.jpg"
+    }
+]
