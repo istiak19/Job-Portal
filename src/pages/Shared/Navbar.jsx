@@ -6,7 +6,7 @@ import AuthContext from "../../context/AuthContext/AuthContext";
 const Navbar = () => {
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><a>Submenu 2</a></li>
+        <li><NavLink to='/myApplication'>My Application</NavLink></li>
     </>
 
     const { name, user, signOutUser } = useContext(AuthContext)
