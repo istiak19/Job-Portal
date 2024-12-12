@@ -1,25 +1,36 @@
 import { useEffect, useState } from "react";
 import UseAuth from "../../Hook/UseAuth";
+import { MdDelete } from "react-icons/md";
 
 const MyApplication = () => {
     const { user } = UseAuth()
     const [jobs, setJobs] = useState([])
+
     useEffect(() => {
         fetch(`http://localhost:5000/job-application?email=${user.email}`)
             .then(res => res.json())
             .then(data => setJobs(data))
     }, [user.email])
 
+    const handleDelete = (id) => {
+        console.log(id)
+        fetch(`http://localhost:5000/job-application/${id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                const remaining = jobs.filter(job => job._id !== id)
+                setJobs(remaining)
+            })
+    }
+
     return (
         <div className="overflow-x-auto">
             <table className="table">
-                {/* head */}
                 <thead>
                     <tr>
                         <th>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                            </label>
                         </th>
                         <th>Name</th>
                         <th>Job</th>
@@ -30,11 +41,6 @@ const MyApplication = () => {
                 <tbody>
                     {
                         jobs.map(job => <tr key={job._id}>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
                             <td>
                                 <div className="flex items-center gap-3">
                                     <div className="avatar">
@@ -53,11 +59,11 @@ const MyApplication = () => {
                             <td>
                                 {job.title}
                                 <br />
-                                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+                                <span className="badge badge-ghost badge-sm">{job.jobType}</span>
                             </td>
-                            <td>Purple</td>
+                            <td>{job.category}</td>
                             <th>
-                                <button className="btn btn-ghost btn-xs">x</button>
+                                <button onClick={() => handleDelete(job._id)} className="btn"><MdDelete /></button>
                             </th>
                         </tr>)
                     }
