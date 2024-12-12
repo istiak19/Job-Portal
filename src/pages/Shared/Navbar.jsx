@@ -7,6 +7,7 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/myApplication'>My Application</NavLink></li>
+        <li><NavLink to='/add-job'>Add Job</NavLink></li>
     </>
 
     const { name, user, signOutUser } = useContext(AuthContext)
@@ -47,8 +48,8 @@ const Navbar = () => {
                 </div>
                 <a className="btn btn-ghost text-xl">
                     <div className="flex items-center gap-2">
-                    <img src={logoPic} alt="" />
-                    <p>Job Portal</p>
+                        <img src={logoPic} alt="" />
+                        <p>Job Portal</p>
                     </div>
                 </a>
             </div>
